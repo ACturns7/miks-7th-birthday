@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Royal Celebration of Angel Crismie</title>
+  
+  <!-- Royal Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --pastel-lavender: #bca0dc;
+      --lavender-mist: #f4effa;
+      --soft-lilac: #dcd0f0;
+      --deep-lavender: #6d4c94;
+      --royal-violet: #4e326e;
+      --imperial-gold: #d4af37;
+      --light-gold: #faf3e0;
+      --card-parchment: rgba(255, 255, 255, 0.96);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(ellipse at bottom, #f3ebfa 0%, #e2d2f5 50%, #cdb6eb 100%);
+      color: #3b284c;
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Fairy Particle Canvas */
+    #magicCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ELEGANT SVG VECTOR BUTTERFLIES ON SIDES */
+    .butterfly-vector {
+      position: fixed;
+      pointer-events: none;
+      z-index: 6;
+      width: 44px;
+      height: 44px;
+      filter: drop-shadow(0 6px 12px rgba(109, 76, 148, 0.35));
+    }
+
+    .butterfly-vector svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--royal-violet);
+      opacity: 0.85;
+      animation: vectorWingFlap 0.6s ease-in-out infinite alternate;
+    }
+
+    @keyframes vectorWingFlap {
+      0% { transform: scaleX(1) rotate(0deg); }
+      100% { transform: scaleX(0.28) rotate(8deg); }
+    }
+
+    /* Left Path */
+    .bf-v-l1 {
+      left: 3%;
+      animation: flyVectorLeft1 15s ease-in-out infinite;
+    }
+    .bf-v-l2 {
+      left: 6%;
+      width: 32px;
+      height: 32px;
+      animation: flyVectorLeft2 18s ease-in-out infinite 3.5s;
+    }
+    .bf-v-l3 {
+      left: 2%;
+      width: 52px;
+      height: 52px;
+      animation: flyVectorLeft1 14s ease-in-out infinite 8s;
+    }
+
+    /* Right Path */
+    .bf-v-r1 {
+      right: 3%;
+      animation: flyVectorRight1 16s ease-in-out infinite 1s;
+    }
+    .bf-v-r2 {
+      right: 6%;
+      width: 34px;
+      height: 34px;
+      animation: flyVectorRight2 19s ease-in-out infinite 4.5s;
+    }
+    .bf-v-r3 {
+      right: 2%;
+      width: 54px;
+      height: 54px;
+      animation: flyVectorRight1 13s ease-in-out infinite 9s;
+    }
+
+    @keyframes flyVectorLeft1 {
+      0% {
+        top: 105vh;
+        transform: translateX(0px) rotate(15deg);
+        opacity: 0;
+      }
+      15% { opacity: 0.9; }
+      50% { transform: translateX(35px) rotate(-12deg); }
+      85% { opacity: 0.9; }
+      100% {
+        top: -12vh;
+        transform: translateX(-15px) rotate(18deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyVectorLeft2 {
+      0% {
+        top: 105vh;
+        transform: translateX(20px) rotate(-10deg);
+        opacity: 0;
+      }
+      15% { opacity: 0.8; }
+      50% { transform: translateX(-25px) rotate(14deg); }
+      85% { opacity: 0.8; }
+      100% {
+        top: -12vh;
+        transform: translateX(15px) rotate(-8deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyVectorRight1 {
+      0% {
+        top: 105vh;
+        transform: translateX(0px) rotate(-15deg);
+        opacity: 0;
+      }
+      15% { opacity: 0.9; }
+      50% { transform: translateX(-35px) rotate(12deg); }
+      85% { opacity: 0.9; }
+      100% {
+        top: -12vh;
+        transform: translateX(15px) rotate(-18deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyVectorRight2 {
+      0% {
+        top: 105vh;
+        transform: translateX(-20px) rotate(10deg);
+        opacity: 0;
+      }
+      15% { opacity: 0.8; }
+      50% { transform: translateX(25px) rotate(-14deg); }
+      85% { opacity: 0.8; }
+      100% {
+        top: -12vh;
+        transform: translateX(-15px) rotate(8deg);
+        opacity: 0;
+      }
+    }
+
+    /* ENVELOPE / STORYBOOK ENTRY GATE */
+    #entryGate {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, #ecdffd 0%, #caa9ee 100%);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1), visibility 1s;
+      color: var(--royal-violet);
+      text-align: center;
+      padding: 20px;
+    }
+
+    #entryGate.opened {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .seal-btn {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f3cf7a 0%, #b88628 100%);
+      border: 3px solid #fff;
+      box-shadow: 0 0 35px rgba(229, 185, 88, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 2.2rem;
+      color: var(--royal-violet);
+      margin-top: 30px;
+      animation: pulseGlow 2.5s infinite;
+      transition: transform 0.3s;
+    }
+
+    .seal-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 25px rgba(229, 185, 88, 0.5); transform: scale(1); }
+      50% { box-shadow: 0 0 45px rgba(229, 185, 88, 0.9); transform: scale(1.05); }
+    }
+
+    /* MAIN CONTENT WRAPPER */
+    .storybook-container {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    .royal-frame {
+      background: var(--card-parchment);
+      border-radius: 20px;
+      border: 2px solid var(--imperial-gold);
+      padding: 50px 30px;
+      box-shadow: 0 20px 60px rgba(109, 76, 148, 0.15), inset 0 0 30px rgba(188, 160, 220, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Corner Filigrees */
+    .corner-decor {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--imperial-gold);
+      pointer-events: none;
+    }
+    .top-left { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+    .top-right { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+    .bottom-left { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+    .bottom-right { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+    /* TYPOGRAPHY */
+    .heraldic-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      color: var(--deep-lavender);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .royal-name {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 2.8rem;
+      text-align: center;
+      color: var(--royal-violet);
+      text-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+      line-height: 1.1;
+      margin: 10px 0;
+    }
+
+    .cursive-subtitle {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 2.8rem;
+      color: var(--deep-lavender);
+      text-align: center;
+      display: block;
+      margin-top: -10px;
+      margin-bottom: 25px;
+    }
+
+    .divider-gold {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      color: var(--imperial-gold);
+      margin: 25px 0;
+      font-size: 1.1rem;
+    }
+    .divider-gold::before, .divider-gold::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--imperial-gold), transparent);
+    }
+
+    /* PHOTO FRAME */
+    .arch-photo-container {
+      width: 220px;
+      height: 290px;
+      margin: 0 auto 30px;
+      border-radius: 130px 130px 15px 15px;
+      padding: 6px;
+      background: linear-gradient(180deg, var(--imperial-gold) 0%, var(--pastel-lavender) 100%);
+      box-shadow: 0 12px 30px rgba(109, 76, 148, 0.2);
+    }
+
+    .arch-photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 125px 125px 10px 10px;
+    }
+
+    /* COUNTDOWN DIAL */
+    .countdown-dial {
+      display: flex;
+      justify-content: space-around;
+      background: var(--lavender-mist);
+      border: 1px solid var(--soft-lilac);
+      border-radius: 12px;
+      padding: 15px 5px;
+      margin: 25px 0;
+    }
+
+    .dial-segment {
+      text-align: center;
+    }
+
+    .dial-val {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--royal-violet);
+    }
+
+    .dial-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--deep-lavender);
+    }
+
+    /* EVENT SPECS */
+    .royal-spec {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.15rem;
+      line-height: 1.5;
+    }
+
+    .royal-spec strong {
+      font-family: 'Cinzel', serif;
+      color: var(--royal-violet);
+      font-size: 1.25rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .btn-maps {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--deep-lavender);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 25px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      border: 1px solid var(--imperial-gold);
+      margin-top: 10px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(109, 76, 148, 0.2);
+    }
+
+    .btn-maps:hover {
+      background: var(--royal-violet);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(109, 76, 148, 0.3);
+    }
+
+    /* 7s TABS SYSTEM */
+    .tab-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .tab-pill {
+      background: var(--lavender-mist);
+      border: 1px solid var(--soft-lilac);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      color: var(--royal-violet);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .tab-pill.active {
+      background: var(--deep-lavender);
+      color: #ffffff;
+      border-color: var(--imperial-gold);
+      box-shadow: 0 3px 8px rgba(109, 76, 148, 0.25);
+    }
+
+    .tab-display-box {
+      background: #ffffff;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 160px;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(188, 160, 220, 0.1);
+    }
+
+    .tab-display-box ol {
+      list-style-position: inside;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 1.05rem;
+      color: #49335e;
+    }
+
+    /* GALLERY */
+    .portrait-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .trio-card {
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--pastel-lavender);
+      box-shadow: 0 6px 15px rgba(109, 76, 148, 0.12);
+    }
+
+    .trio-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .trio-card:hover img {
+      transform: scale(1.08);
+    }
+
+    /* INTERACTIVE RSVP FORM */
+    .rsvp-form-card {
+      background: var(--lavender-mist);
+      border: 1.5px solid var(--soft-lilac);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: left;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(109, 76, 148, 0.08);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--royal-violet);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--soft-lilac);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      background: #ffffff;
+      color: #3b284c;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: var(--deep-lavender);
+      box-shadow: 0 0 8px rgba(188, 160, 220, 0.4);
+    }
+
+    .radio-pill-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .radio-pill {
+      background: #ffffff;
+      border: 1px solid var(--soft-lilac);
+      padding: 10px 8px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #555;
+      transition: all 0.3s;
+    }
+
+    .radio-pill.selected {
+      background: var(--deep-lavender);
+      color: #ffffff;
+      border-color: var(--imperial-gold);
+    }
+
+    .guest-count-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .send-options-block {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px dashed var(--soft-lilac);
+    }
+
+    .channel-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      color: var(--deep-lavender);
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    /* Instruction Tip Box */
+    .instruction-tip {
+      background: #ffffff;
+      border-left: 3px solid var(--imperial-gold);
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      color: #5a4073;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .btn-action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .btn-send {
+      padding: 10px 8px;
+      border-radius: 20px;
+      border: 1px solid var(--imperial-gold);
+      background: var(--royal-violet);
+      color: #ffffff;
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(109, 76, 148, 0.2);
+    }
+
+    .btn-send.sms {
+      background: #2a9d8f;
+      border-color: #264653;
+    }
+
+    .btn-send:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* NOTES BANNER */
+    .proclamation-box {
+      background: #fdfcff;
+      border-left: 3px solid var(--pastel-lavender);
+      padding: 15px;
+      text-align: left;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      margin-top: 12px;
+      border-radius: 4px;
+    }
+
+    /* FLOATING MUSIC CONTROLLER */
+    .music-orb {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--deep-lavender);
+      border: 2px solid var(--imperial-gold);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(109, 76, 148, 0.4);
+      transition: transform 0.2s;
+    }
+    .music-orb:hover {
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 480px) {
+      .royal-name { font-size: 2.2rem; }
+      .tab-display-box ol { grid-template-columns: 1fr; }
+      .btn-action-row { grid-template-columns: 1fr; }
+      .butterfly-vector { opacity: 0.45; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ELEGANT PURPLE VECTOR BUTTERFLIES FLYING ON SIDES -->
+  <div class="butterfly-vector bf-v-l1">
+    <svg viewBox="0 0 24 24"><path d="M12 4.5C10.5 2 6 2 3.5 4.5S2 10.5 4 12c-2 1.5-2.5 5.5-.5 7.5s6 .5 8.5-2.5c2.5 3 6.5 4.5 8.5 2.5s1.5-6-.5-7.5c2-1.5 3-5 .5-7.5S13.5 2 12 4.5z"/></svg>
+  </div>
+  <div class="butterfly-vector bf-v-l2">
+    <svg viewBox="0 0 24 24"><path d="M12 4.5C10.5 2 6 2 3.5 4.5S2 10.5 4 12c-2 1.5-2.5 5.5-.5 7.5s6 .5 8.5-2.5c2.5 3 6.5 4.5 8.5 2.5s1.5-6-.5-7.5c2-1.5 3-5 .5-7.5S13.5 2 12 4.5z"/></svg>
+  </div>
+  <div class="butterfly-vector bf-v-l3">
+    <svg viewBox="0 0 24 24"><path d="M12 4.5C10.5 2 6 2 3.5 4.5S2 10.5 4 12c-2 1.5-2.5 5.5-.5 7.5s6 .5 8.5-2.5c2.5 3 6.5 4.5 8.5 2.5s1.5-6-.5-7.5c2-1.5 3-5 .5-7.5S13.5 2 12 4.5z"/></svg>
+  </div>
+
+  <div class="butterfly-vector bf-v-r1">
+    <svg viewBox="0 0 24 24"><path d="M12 4.5C10.5 2 6 2 3.5 4.5S2 10.5 4 12c-2 1.5-2.5 5.5-.5 7.5s6 .5 8.5-2.5c2.5 3 6.5 4.5 8.5 2.5s1.5-6-.5-7.5c2-1.5 3-5 .5-7.5S13.5 2 12 4.5z"/></svg>
+  </div>
+  <div class="butterfly-vector bf-v-r2">
+    <svg viewBox="0 0 24 24"><path d="M12 4.5C10.5 2 6 2 3.5 4.5S2 10.5 4 12c-2 1.5-2.5 5.5-.5 7.5s6 .5 8.5-2.5c2.5 3 6.5 4.5 8.5 2.5s1.5-6-.5-7.5c2-1.5 3-5 .5-7.5S13.5 2 12 4.5z"/></svg>
+  </div>
+  <div class="butterfly-vector bf-v-r3">
+    <svg viewBox="0 0 24 24"><path d="M12 4.5C10.5 2 6 2 3.5 4.5S2 10.5 4 12c-2 1.5-2.5 5.5-.5 7.5s6 .5 8.5-2.5c2.5 3 6.5 4.5 8.5 2.5s1.5-6-.5-7.5c2-1.5 3-5 .5-7.5S13.5 2 12 4.5z"/></svg>
+  </div>
+
+  <!-- CANVAS SPARKLES -->
+  <canvas id="magicCanvas"></canvas>
+
+  <!-- AUDIO -->
+  <audio id="royalAudio" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- FLOATING MUSIC BUTTON -->
+  <div class="music-orb" id="musicOrb" aria-label="Toggle Audio">
+    <i class="fa-solid fa-music"></i>
+  </div>
+
+  <!-- ENTRY STORYBOOK GATE -->
+  <div id="entryGate">
+    <p style="font-family: 'Cinzel', serif; letter-spacing: 5px; font-size: 0.85rem; color: var(--royal-violet);">A ROYAL INVITATION</p>
+    <h1 style="font-family: 'Pinyon Script', cursive; font-size: 4rem; color: var(--royal-violet); margin: 5px 0;">Angel Crismie</h1>
+    <p style="font-size: 1.2rem; font-style: italic; color: #5a3d7a;">is celebrating seven magical years</p>
+    
+    <div class="seal-btn" id="sealOpener">
+      <i class="fa-solid fa-envelope-open-text"></i>
+    </div>
+    <p style="font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 15px; color: var(--royal-violet); font-weight: 600;">Tap to Open Invitation</p>
+  </div>
+
+  <!-- MAIN INVITATION FRAME -->
+  <div class="storybook-container">
+    <div class="royal-frame">
+      
+      <!-- Corner Filigrees -->
+      <div class="corner-decor top-left"></div>
+      <div class="corner-decor top-right"></div>
+      <div class="corner-decor bottom-left"></div>
+      <div class="corner-decor bottom-right"></div>
+
+      <!-- Hero Header -->
+      <p class="heraldic-text">By the Grace of Family & Faith</p>
+      <h1 class="royal-name">Angel Crismie</h1>
+      <span class="cursive-subtitle">Turns Seven</span>
+
+      <!-- Arch Portrait Photo -->
+      <div class="arch-photo-container">
+        <img src="celebrant.png" alt="Angel Crismie" onerror="this.src='https://via.placeholder.com/400x500/bca0dc/ffffff?text=Angel+Crismie'">
+      </div>
+
+      <p style="text-align: center; font-size: 1.25rem; font-style: italic; line-height: 1.6; max-width: 500px; margin: 0 auto;">
+        "Get ready for games, sweets, and fun memories! Don’t forget to bring your biggest smiles."
+      </p>
+
+      <!-- Countdown -->
+      <div class="countdown-dial">
+        <div class="dial-segment">
+          <div class="dial-val" id="d">00</div>
+          <div class="dial-label">Days</div>
+        </div>
+        <div class="dial-segment">
+          <div class="dial-val" id="h">00</div>
+          <div class="dial-label">Hours</div>
+        </div>
+        <div class="dial-segment">
+          <div class="dial-val" id="m">00</div>
+          <div class="dial-label">Minutes</div>
+        </div>
+        <div class="dial-segment">
+          <div class="dial-val" id="s">00</div>
+          <div class="dial-label">Seconds</div>
+        </div>
+      </div>
+
+      <div class="divider-gold"><i class="fa-solid fa-crown"></i></div>
+
+      <!-- CELEBRATION DETAILS -->
+      <div class="royal-spec">
+        <strong>The Date & Time</strong>
+        Sunday, October 18, 2026<br>
+        Welcoming guests at 5:00 in the afternoon
+      </div>
+
+      <div class="royal-spec">
+        <strong>The Grand Pavilion</strong>
+        Sto. Niño Village Pavilion<br>
+        Tunasan, Muntinlupa City<br>
+        <a href="https://maps.google.com/?q=Sto+Nino+Village+Tunasan+Muntinlupa" target="_blank" class="btn-maps">
+          <i class="fa-solid fa-location-arrow"></i> Get Map Directions
+        </a>
+      </div>
+
+      <div class="royal-spec" style="margin-top: 30px;">
+        <strong>Dress Code Proclamation</strong>
+        Comfortable / Semi-Casual Attire
+        <div style="font-size: 0.95rem; color: var(--deep-lavender); font-style: italic; margin-top: 4px;">
+          ✦ Note: The royal shades of lavender are uniquely reserved for the celebrant ✦
+        </div>
+      </div>
+
+      <div class="divider-gold"><i class="fa-solid fa-feather-pointed"></i></div>
+
+      <!-- THE SEVEN 7S WITH INTERACTIVE TABS -->
+      <div style="text-align: center;">
+        <h2 style="font-family: 'Cinzel', serif; color: var(--royal-violet); font-size: 1.4rem; letter-spacing: 2px;">The Seven 7s</h2>
+        <p style="font-size: 0.95rem; font-style: italic; margin-bottom: 15px; color: #6f5f84;">Select a court of honor</p>
+
+        <div class="tab-pills" id="tabsWrap">
+          <button class="tab-pill active" onclick="showTab(0)">🌹 Roses</button>
+          <button class="tab-pill" onclick="showTab(1)">🕯️ Candles</button>
+          <button class="tab-pill" onclick="showTab(2)">🎁 Gifts</button>
+          <button class="tab-pill" onclick="showTab(3)">👠 Shoes</button>
+          <button class="tab-pill" onclick="showTab(4)">🧸 Toys</button>
+          <button class="tab-pill" onclick="showTab(5)">🎒 Bags</button>
+          <button class="tab-pill" onclick="showTab(6)">💵 Bills</button>
+        </div>
+
+        <div class="tab-display-box" id="tabContentBox">
+          <!-- Dynamic Content -->
+        </div>
+      </div>
+
+      <div class="divider-gold"><i class="fa-solid fa-camera-retro"></i></div>
+
+      <!-- EDITORIAL GALLERY -->
+      <div style="text-align: center;">
+        <h2 style="font-family: 'Cinzel', serif; color: var(--royal-violet); font-size: 1.4rem; letter-spacing: 2px;">A Glimpse of Angel</h2>
+        <div class="portrait-trio">
+          <div class="trio-card"><img src="photo1.png" alt="Angel 1" onerror="this.src='https://via.placeholder.com/400x500/bca0dc/ffffff?text=Portrait+1'"></div>
+          <div class="trio-card"><img src="photo2.png" alt="Angel 2" onerror="this.src='https://via.placeholder.com/400x500/dcd0f0/ffffff?text=Portrait+2'"></div>
+          <div class="trio-card"><img src="photo3.png" alt="Angel 3" onerror="this.src='https://via.placeholder.com/400x500/bca0dc/ffffff?text=Portrait+3'"></div>
+        </div>
+      </div>
+
+      <div class="divider-gold"><i class="fa-solid fa-scroll"></i></div>
+
+      <!-- INTERACTIVE RSVP FORM -->
+      <div style="text-align: center;">
+        <h2 style="font-family: 'Cinzel', serif; color: var(--royal-violet); font-size: 1.4rem; letter-spacing: 2px;">R. S. V. P. Form</h2>
+        <p style="font-size: 1.05rem;">Please let us know if you can make it on or before<br><strong>October 1, 2026</strong></p>
+
+        <div class="rsvp-form-card">
+          
+          <div class="form-group">
+            <label>Your Full Name / Family Name</label>
+            <input type="text" id="guestName" class="form-control" placeholder="e.g., Tita Maria & Family">
+          </div>
+
+          <div class="form-group">
+            <label>Will You Attend?</label>
+            <div class="radio-pill-group">
+              <div class="radio-pill selected" id="attendingYes" onclick="selectAttendance(true)">
+                <i class="fa-solid fa-circle-check"></i> Joyfully Attending
+              </div>
+              <div class="radio-pill" id="attendingNo" onclick="selectAttendance(false)">
+                <i class="fa-solid fa-circle-xmark"></i> Regretfully Cannot
+              </div>
+            </div>
+          </div>
+
+          <div id="headcountSection">
+            <div class="guest-count-row">
+              <div class="form-group">
+                <label>Number of Adults</label>
+                <input type="number" id="adultCount" class="form-control" value="1" min="1" max="10">
+              </div>
+              <div class="form-group">
+                <label>Number of Kids</label>
+                <input type="number" id="kidCount" class="form-control" value="0" min="0" max="10">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Special Birthday Wish / Message (Optional)</label>
+            <textarea id="guestMessage" class="form-control" rows="2" placeholder="Write a sweet wish for Angel Crismie..."></textarea>
+          </div>
+
+          <!-- Direct Send Action Buttons -->
+          <div class="send-options-block">
+            
+            <span class="channel-title"><i class="fa-solid fa-mobile-screen"></i> 1-Click Send via SMS / Regular Text:</span>
+            <div class="instruction-tip">
+              <i class="fa-solid fa-circle-info" style="color: #2a9d8f;"></i> Kusang lalabas ang buong mensahe sa Text/Messages app mo—pipindutin mo na lang ang send!
+            </div>
+            <div class="btn-action-row">
+              <button class="btn-send sms" onclick="sendViaSMS('09913748779')">
+                <i class="fa-solid fa-comment-dots"></i> Text Mom (Thina)
+              </button>
+              <button class="btn-send sms" onclick="sendViaSMS('09913748774')">
+                <i class="fa-solid fa-comment-dots"></i> Text Dad (Emz)
+              </button>
+            </div>
+
+            <span class="channel-title" style="margin-top: 15px;"><i class="fa-brands fa-facebook-messenger"></i> Send via Messenger:</span>
+            <div class="instruction-tip">
+              <i class="fa-solid fa-copy" style="color: var(--deep-lavender);"></i> <strong>Paalala:</strong> Kusang makokopya ang detalye mo pag-click. Pagbukas ng Messenger, <strong>i-PASTE (Idikit)</strong> lang sa message box at i-send!
+            </div>
+            <div class="btn-action-row">
+              <button class="btn-send" onclick="sendViaMessenger('mom')">
+                <i class="fa-brands fa-facebook-messenger"></i> Chat Mom (Thina)
+              </button>
+              <button class="btn-send" onclick="sendViaMessenger('dad')">
+                <i class="fa-brands fa-facebook-messenger"></i> Chat Dad (Emz)
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="proclamation-box">
+          <strong>A Gentle Note on Gifts:</strong><br>
+          "Your presence and prayers are the greatest gifts. But if you wish to honor Angel Crismie with a gift, a monetary gift to help build her future savings will be warmly appreciated."
+        </div>
+
+        <div class="proclamation-box" style="margin-top: 10px;">
+          <strong>Reserved Seating:</strong><br>
+          "Due to limited venue capacity, reserved seats are allocated only for confirmed guests. Please confirm your attendance on or before October 1, 2026."
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // 1. Data Store for 7s[cite: 3]
+    const sevensData = [
+      { title: "🌹 7 Roses", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
+      { title: "🕯️ 7 Candles", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
+      { title: "🎁 7 Symbolic Gifts", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
+      { title: "👠 7 Shoes", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
+      { title: "🧸 7 Toys", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
+      { title: "🎒 7 Bags", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
+      { title: "💵 7 Bills", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] }
+    ];
+
+    function showTab(idx) {
+      const pills = document.querySelectorAll(".tab-pill");
+      pills.forEach((p, i) => p.classList.toggle("active", i === idx));
+      
+      const target = sevensData[idx];
+      const box = document.getElementById("tabContentBox");
+      box.innerHTML = `
+        <h3 style="font-family: 'Cinzel', serif; color: var(--royal-violet); font-size: 1.1rem; margin-bottom: 12px;">${target.title}</h3>
+        <ol>
+          ${target.members.map(m => `<li>${m}</li>`).join('')}
+        </ol>
+      `;
+    }
+    showTab(0);
+
+    // 2. RSVP Message Compiler[cite: 3]
+    let isAttending = true;
+
+    function selectAttendance(attending) {
+      isAttending = attending;
+      document.getElementById("attendingYes").classList.toggle("selected", attending);
+      document.getElementById("attendingNo").classList.toggle("selected", !attending);
+      document.getElementById("headcountSection").style.display = attending ? "block" : "none";
+    }
+
+    function buildRSVPMessage() {
+      const name = document.getElementById("guestName").value.trim();
+      const adults = document.getElementById("adultCount").value;
+      const kids = document.getElementById("kidCount").value;
+      const message = document.getElementById("guestMessage").value.trim();
+
+      if (!name) {
+        alert("Please enter your name / family name first! 😊");
+        return null;
+      }
+
+      let text = `✨ 7th Birthday RSVP for Angel Crismie ✨\n\n`;
+      text += `👤 Guest: ${name}\n`;
+      text += `📋 Status: ${isAttending ? 'Joyfully Attending! 🎉' : 'Regretfully Cannot Attend 😢'}\n`;
+      
+      if (isAttending) {
+        text += `👥 Headcount: ${adults} Adult(s), ${kids} Kid(s)\n`;
+      }
+      if (message) {
+        text += `💌 Wish: "${message}"\n`;
+      }
+      return text;
+    }
+
+    // Direct SMS Trigger[cite: 3]
+    function sendViaSMS(phone) {
+      const msg = buildRSVPMessage();
+      if (!msg) return;
+      
+      const encodedMsg = encodeURIComponent(msg);
+      window.location.href = `sms:${phone}?&body=${encodedMsg}`;
+    }
+
+    // Messenger Trigger (Auto-Copies to Clipboard with Alert)[cite: 3]
+    function sendViaMessenger(recipient) {
+      const msg = buildRSVPMessage();
+      if (!msg) return;
+
+      navigator.clipboard.writeText(msg).then(() => {
+        alert("✅ NAKOPYA NA ANG IYONG RSVP DETAILS!\n\nPagbukas ng Messenger, i-PASTE (Idikit / Long press then Paste) lang sa chat box at pindutin ang Send! 💜");
+        const link = recipient === 'mom' ? 'https://m.me/christina.alde' : 'https://m.me/emmie.sibulo';
+        window.open(link, '_blank');
+      }).catch(() => {
+        const link = recipient === 'mom' ? 'https://m.me/christina.alde' : 'https://m.me/emmie.sibulo';
+        window.open(link, '_blank');
+      });
+    }
+
+    // 3. Gate Opening & Music Play Interaction[cite: 3]
+    const audio = document.getElementById("royalAudio");
+    const gate = document.getElementById("entryGate");
+    const seal = document.getElementById("sealOpener");
+    const musicOrb = document.getElementById("musicOrb");
+    let isPlaying = false;
+
+    seal.addEventListener("click", () => {
+      gate.classList.add("opened");
+      audio.play().then(() => {
+        isPlaying = true;
+      }).catch(() => {});
+    });
+
+    musicOrb.addEventListener("click", () => {
+      if (isPlaying) {
+        audio.pause();
+        musicOrb.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+        isPlaying = false;
+      } else {
+        audio.play();
+        musicOrb.innerHTML = '<i class="fa-solid fa-music"></i>';
+        isPlaying = true;
+      }
+    });
+
+    // 4. Countdown Engine[cite: 3]
+    const targetDate = new Date("October 18, 2026 17:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+      if (diff > 0) {
+        document.getElementById("d").innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+        document.getElementById("h").innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+        document.getElementById("m").innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        document.getElementById("s").innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+      }
+    }, 1000);
+
+    // 5. Starlight Magic Canvas[cite: 3]
+    const canvas = document.getElementById('magicCanvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    for (let i = 0; i < 55; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 0.5,
+        speed: Math.random() * 0.4 + 0.1,
+        color: Math.random() > 0.5 ? 'rgba(212, 175, 55,' : 'rgba(188, 160, 220,'
+      });
+    }
+
+    function renderCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      stars.forEach(s => {
+        s.y -= s.speed;
+        if (s.y < 0) s.y = canvas.height;
+        ctx.fillStyle = s.color + (Math.sin(Date.now() * 0.002 + s.x) * 0.4 + 0.5) + ')';
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(renderCanvas);
+    }
+    renderCanvas();
+  </script>
+</body>
+</html>
