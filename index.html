@@ -422,19 +422,35 @@
       background: #ffffff;
       border: 1px solid rgba(212, 175, 55, 0.4);
       border-radius: 12px;
-      padding: 20px;
+      padding: 24px 20px;
       min-height: 160px;
-      text-align: left;
+      text-align: center;
       box-shadow: 0 4px 12px rgba(188, 160, 220, 0.1);
     }
 
+    /* PABABA / SINGLE COLUMN NUMBERING */
     .tab-display-box ol {
       list-style-position: inside;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      font-size: 1.05rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.15rem;
       color: #49335e;
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    .tab-display-box li {
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+      padding: 4px 0;
+      border-bottom: 1px dashed rgba(220, 208, 240, 0.6);
+    }
+
+    .tab-display-box li:last-child {
+      border-bottom: none;
     }
 
     /* GALLERY */
@@ -638,7 +654,6 @@
 
     @media (max-width: 480px) {
       .royal-name { font-size: 2.2rem; }
-      .tab-display-box ol { grid-template-columns: 1fr; }
       .btn-action-row { grid-template-columns: 1fr; }
       .butterfly-vector { opacity: 0.45; }
     }
@@ -770,12 +785,12 @@
         <p style="font-size: 0.95rem; font-style: italic; margin-bottom: 15px; color: #6f5f84;">Select a court of honor</p>
 
         <div class="tab-pills" id="tabsWrap">
-          <button class="tab-pill active" onclick="showTab(0)">🌹 Roses</button>
-          <button class="tab-pill" onclick="showTab(1)">🕯️ Candles</button>
-          <button class="tab-pill" onclick="showTab(2)">🎁 Gifts</button>
-          <button class="tab-pill" onclick="showTab(3)">👠 Shoes</button>
-          <button class="tab-pill" onclick="showTab(4)">🧸 Toys</button>
-          <button class="tab-pill" onclick="showTab(5)">🎒 Bags</button>
+          <button class="tab-pill active" onclick="showTab(0)">🕯️ Candles</button>
+          <button class="tab-pill" onclick="showTab(1)">🌹 Roses</button>
+          <button class="tab-pill" onclick="showTab(2)">👠 Shoes</button>
+          <button class="tab-pill" onclick="showTab(3)">🧸 Toys</button>
+          <button class="tab-pill" onclick="showTab(4)">🎒 Bags</button>
+          <button class="tab-pill" onclick="showTab(5)">🎁 Gifts</button>
           <button class="tab-pill" onclick="showTab(6)">💵 Bills</button>
         </div>
 
@@ -826,11 +841,11 @@
             <div class="guest-count-row">
               <div class="form-group">
                 <label>Number of Adults</label>
-                <input type="number" id="adultCount" class="form-control" value="1" min="1" max="10">
+                <input type="number" id="adultCount" class="form-control" placeholder="0" min="0" max="10">
               </div>
               <div class="form-group">
                 <label>Number of Kids</label>
-                <input type="number" id="kidCount" class="form-control" value="0" min="0" max="10">
+                <input type="number" id="kidCount" class="form-control" placeholder="0" min="0" max="10">
               </div>
             </div>
           </div>
@@ -888,15 +903,92 @@
   </div>
 
   <script>
-    // 1. Data Store for 7s[cite: 3]
+    // 1. Data Store for 7s (Pababa / Single-Column Order)
     const sevensData = [
-      { title: "🌹 7 Roses", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
-      { title: "🕯️ 7 Candles", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
-      { title: "🎁 7 Symbolic Gifts", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
-      { title: "👠 7 Shoes", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
-      { title: "🧸 7 Toys", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
-      { title: "🎒 7 Bags", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] },
-      { title: "💵 7 Bills", members: ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7"] }
+      {
+        title: "🕯️ 7 Candles",
+        members: [
+          "Adriana",
+          "Kai",
+          "Francine",
+          "Kendra",
+          "Nikki",
+          "Saab",
+          "Jade"
+        ]
+      },
+      {
+        title: "🌹 7 Roses",
+        members: [
+          "Yvoeh",
+          "Drake",
+          "Adam",
+          "Kingston",
+          "Zosimo",
+          "Andrei Nick",
+          "Daddy Emz"
+        ]
+      },
+      {
+        title: "👠 7 Shoes",
+        members: [
+          "Ninong Aerol",
+          "Ninang Carmina",
+          "Ninang Annie",
+          "Ninang Hannah",
+          "Ate Princess",
+          "Ate Jhoanne",
+          "Ate Cielo"
+        ]
+      },
+      {
+        title: "🧸 7 Toys (Squishy)",
+        members: [
+          "Amari",
+          "Queen",
+          "Niña",
+          "Scarlete",
+          "Harley",
+          "Izzy",
+          "Maxine"
+        ]
+      },
+      {
+        title: "🎒 7 Bags",
+        members: [
+          "Ninang Grace",
+          "Ninong Bazty",
+          "Ninong Junjun",
+          "Ninang Marj",
+          "Ninang Raffa",
+          "Ninong Rhon",
+          "Ninang Michelle"
+        ]
+      },
+      {
+        title: "🎁 7 Symbolic Gifts",
+        members: [
+          "Ninong Whel",
+          "Ninang Danlyn",
+          "Ninang Emelinda",
+          "Ninong Marlon",
+          "Ninang Gars",
+          "Ninang Rons",
+          "Ninong Anton"
+        ]
+      },
+      {
+        title: "💵 7 Bills",
+        members: [
+          "Ninang Tess",
+          "Ninang Babet",
+          "Ninang Marijoy",
+          "Ninong Rommel",
+          "Ninong July",
+          "Ninong Sonny",
+          "Ninang Rizza"
+        ]
+      }
     ];
 
     function showTab(idx) {
@@ -906,7 +998,7 @@
       const target = sevensData[idx];
       const box = document.getElementById("tabContentBox");
       box.innerHTML = `
-        <h3 style="font-family: 'Cinzel', serif; color: var(--royal-violet); font-size: 1.1rem; margin-bottom: 12px;">${target.title}</h3>
+        <h3 style="font-family: 'Cinzel', serif; color: var(--royal-violet); font-size: 1.15rem; margin-bottom: 12px;">${target.title}</h3>
         <ol>
           ${target.members.map(m => `<li>${m}</li>`).join('')}
         </ol>
@@ -914,7 +1006,7 @@
     }
     showTab(0);
 
-    // 2. RSVP Message Compiler[cite: 3]
+    // 2. RSVP Message Compiler
     let isAttending = true;
 
     function selectAttendance(attending) {
@@ -926,8 +1018,8 @@
 
     function buildRSVPMessage() {
       const name = document.getElementById("guestName").value.trim();
-      const adults = document.getElementById("adultCount").value;
-      const kids = document.getElementById("kidCount").value;
+      const adults = document.getElementById("adultCount").value || 0;
+      const kids = document.getElementById("kidCount").value || 0;
       const message = document.getElementById("guestMessage").value.trim();
 
       if (!name) {
@@ -948,7 +1040,7 @@
       return text;
     }
 
-    // Direct SMS Trigger[cite: 3]
+    // Direct SMS Trigger
     function sendViaSMS(phone) {
       const msg = buildRSVPMessage();
       if (!msg) return;
@@ -957,7 +1049,7 @@
       window.location.href = `sms:${phone}?&body=${encodedMsg}`;
     }
 
-    // Messenger Trigger (Auto-Copies to Clipboard with Alert)[cite: 3]
+    // Messenger Trigger (Auto-Copies to Clipboard with Alert)
     function sendViaMessenger(recipient) {
       const msg = buildRSVPMessage();
       if (!msg) return;
@@ -972,7 +1064,7 @@
       });
     }
 
-    // 3. Gate Opening & Music Play Interaction[cite: 3]
+    // 3. Gate Opening & Music Play Interaction
     const audio = document.getElementById("royalAudio");
     const gate = document.getElementById("entryGate");
     const seal = document.getElementById("sealOpener");
@@ -998,7 +1090,7 @@
       }
     });
 
-    // 4. Countdown Engine[cite: 3]
+    // 4. Countdown Engine
     const targetDate = new Date("October 18, 2026 17:00:00").getTime();
     setInterval(() => {
       const now = new Date().getTime();
@@ -1011,7 +1103,7 @@
       }
     }, 1000);
 
-    // 5. Starlight Magic Canvas[cite: 3]
+    // 5. Starlight Magic Canvas
     const canvas = document.getElementById('magicCanvas');
     const ctx = canvas.getContext('2d');
     let stars = [];
